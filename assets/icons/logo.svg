@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" role="img" aria-label="MART Global">
+  <rect width="40" height="40" rx="10" fill="#063563"/>
+  <path d="M10 28.5V12.5l10 9.2 10-9.2v16" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="30" cy="9.5" r="3.2" fill="#FFE21C"/>
+  <text x="52" y="22" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="21" letter-spacing=".4" fill="#032746">MART</text>
+  <text x="52.5" y="35" font-family="Inter, Arial, sans-serif" font-weight="600" font-size="8" letter-spacing="3.4" fill="#063563">GLOBAL</text>
+</svg>

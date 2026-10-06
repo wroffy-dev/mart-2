@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Large-Scale Program Implementation | Social Solutions | MART Global</title>
+  <meta name="description" content="Design and delivery of community-driven development programs at scale, from strategy to sustainable impact.">
+  <meta name="theme-color" content="#063563">
+  <meta property="og:title" content="Large-Scale Program Implementation | Social Solutions | MART Global">
+  <meta property="og:description" content="Design and delivery of community-driven development programs at scale, from strategy to sustainable impact.">
+  <meta property="og:image" content="assets/images/program-landscape.webp">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&amp;display=swap">
+  <link rel="preload" as="image" href="assets/images/program-landscape.webp" fetchpriority="high">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    document.documentElement.classList.replace('no-js', 'js');
+    // Safety net: if the interaction script never runs, show all content.
+    setTimeout(function () { if (!document.body || !document.body.classList.contains('is-loaded')) document.documentElement.classList.remove('js'); }, 4000);
+  </script>
+  <script src="js/script.js" defer></script>
+</head>
+<body class="has-dark-hero" data-page="social" id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol>
+  <symbol id="i-arrow-ur" viewBox="0 0 24 24"><path d="M7 17L17 7M8.5 7H17v8.5"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 20.5h18M6.5 17v-5M11 17V7M15.5 17v-7.5M20 17V4"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20.5 11.5a8 8 0 0 1-11.6 7.1L4 19.8l1.3-4.4A8 8 0 1 1 20.5 11.5z"/><path d="M9 10.5h7M9 13.5h4.5"/></symbol>
+  <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.6 8.4l-2 5.2-5.2 2 2-5.2z"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3.5l9 4.8-9 4.8-9-4.8z"/><path d="M3 12.6l9 4.8 9-4.8"/><path d="M3 16.8l9 4.7 9-4.7"/></symbol>
+  <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.7.6 1.1 1.4 1.1 2.2h5c0-.8.4-1.6 1.1-2.2A6 6 0 0 0 12 3z"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.2-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><circle cx="17" cy="9" r="2.8"/><path d="M17 14.3c2.5 0 4.1 1.6 4.6 4.2"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19c0-8 5-13 15-14-1 10-6 15-14 15"/><path d="M5 19c3-4 6-7 10-9.5"/></symbol>
+  <symbol id="i-partners" viewBox="0 0 24 24"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></symbol>
+  <symbol id="i-trend" viewBox="0 0 24 24"><path d="M3 17.5l6-6 4 4 8-8"/><path d="M14.5 7.5H21V14"/></symbol>
+  <symbol id="i-device" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M10.5 18.5h3"/><path d="M9.5 9.2a3.6 3.6 0 0 1 5 0M10.9 11a1.6 1.6 0 0 1 2.2 0"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5.5 9.5V20h13V9.5"/><path d="M10 20v-5.5h4V20"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4"/><path d="M5 4.5h11l-2 3.7 2 3.8H5"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.6"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9l1.6-4.5h12.8L20 9"/><path d="M4 9a2.7 2.7 0 0 0 5.3 0 2.7 2.7 0 0 0 5.4 0A2.7 2.7 0 0 0 20 9"/><path d="M5.5 11.5V20h13v-8.5M10 20v-4.5h4V20"/></symbol>
+  <symbol id="i-institution" viewBox="0 0 24 24"><path d="M3 20.5h18M4.5 17.5h15M6.5 17.5v-6.5M10.2 17.5v-6.5M13.8 17.5v-6.5M17.5 17.5v-6.5"/><path d="M3 9.5l9-6 9 6z"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></symbol>
+  <symbol id="i-sprout" viewBox="0 0 24 24"><path d="M12 21v-8.5"/><path d="M12 12.5c0-4.2 2.8-7 8-7 0 5-3 7.4-8 7z"/><path d="M12 14.5c0-3.4-2.3-5.8-7-5.8 0 4 2.5 5.8 7 5.8z"/><path d="M7 21h10"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><circle cx="17" cy="17" r="3.5"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3.5 12.6V4.5a1 1 0 0 1 1-1h8.1l8 8a1.4 1.4 0 0 1 0 2l-7.1 7.1a1.4 1.4 0 0 1-2 0z"/><circle cx="8" cy="8" r="1.4"/></symbol>
+  <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6.2L4.8 18a2 2 0 0 0 1.7 3h11a2 2 0 0 0 1.7-3L14 9.2V3"/><path d="M7.5 15h9"/></symbol>
+  <symbol id="i-pie" viewBox="0 0 24 24"><path d="M20.5 13.5A8.5 8.5 0 1 1 10.5 3.5v10z"/><path d="M14 3a7.5 7.5 0 0 1 7 7h-7z"/></symbol>
+  <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h2.3l2.3 11h10.9l2-8H6.3"/><circle cx="9.5" cy="19.5" r="1.5"/><circle cx="17" cy="19.5" r="1.5"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-mega" viewBox="0 0 24 24"><path d="M3.5 10v4a1 1 0 0 0 1 1H7l9 4.5V4.5L7 9H4.5a1 1 0 0 0-1 1z"/><path d="M7.5 15l1.5 5h2.5l-1.2-4M19.5 9.5a3.5 3.5 0 0 1 0 5"/></symbol>
+  <symbol id="i-cap" viewBox="0 0 24 24"><path d="M2 9.5l10-5 10 5-10 5z"/><path d="M6 11.5v4.8c0 1.4 2.7 3.2 6 3.2s6-1.8 6-3.2v-4.8M22 9.5v5"/></symbol>
+  <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18h7a3.5 3.5 0 0 0 0-7h-7a3.5 3.5 0 0 1 0-7h7"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24"><path d="M4 20h16M4 20V14h4v6M10 20V9h4v11M16 20V4h4v16"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1 1"/><path d="M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1-1"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3.5h3.5l1.8 4.6-2.3 1.6a11 11 0 0 0 6.3 6.3l1.6-2.3 4.6 1.8V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 5.1 1.5 1.5 0 0 1 5 3.5z"/></symbol>
+  <symbol id="s-linkedin" viewBox="0 0 24 24"><path stroke="none" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3zM9.5 9.75h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1v5.35h-4v-4.74c0-1.13-.02-2.59-1.58-2.59-1.58 0-1.82 1.23-1.82 2.5v4.83h-4z"/></symbol>
+  <symbol id="s-x" viewBox="0 0 24 24"><path stroke="none" d="M17.75 3h3.07l-6.7 7.66L22 21h-6.17l-4.83-6.32L5.47 21H2.4l7.17-8.2L2 3h6.33l4.37 5.77zm-1.08 16.17h1.7L7.4 4.73H5.58z"/></symbol>
+  <symbol id="s-youtube" viewBox="0 0 24 24"><path stroke="none" d="M22.5 7.2a2.8 2.8 0 0 0-2-2C18.8 4.7 12 4.7 12 4.7s-6.8 0-8.5.5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 1 12a29 29 0 0 0 .5 4.8 2.8 2.8 0 0 0 2 2c1.7.5 8.5.5 8.5.5s6.8 0 8.5-.5a2.8 2.8 0 0 0 2-2A29 29 0 0 0 23 12a29 29 0 0 0-.5-4.8zM9.8 15.1V8.9l5.6 3.1z"/></symbol>
+  <symbol id="s-facebook" viewBox="0 0 24 24"><path stroke="none" d="M13.5 21.5v-8h2.7l.4-3.2h-3.1V8.3c0-.9.3-1.6 1.6-1.6h1.7V3.9a22 22 0 0 0-2.5-.1c-2.5 0-4.2 1.5-4.2 4.3v2.3H7.3v3.2h2.8v8z"/></symbol>
+  <symbol id="logo-mark" viewBox="0 0 40 40"><rect width="40" height="40" rx="10" style="fill:var(--logo-bg,#063563);transition:fill .35s"/><path d="M10 28.5V12.5l10 9.2 10-9.2v16" style="fill:none;stroke:var(--logo-fg,#fff);transition:stroke .35s" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="30" cy="9.5" r="3.2" style="fill:var(--logo-ac,#FFE21C)"/></symbol>
+</svg>
+
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="MART Global home">
+        <svg class="logo__mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><use href="#logo-mark"></use></svg>
+        <span class="logo__type"><span class="logo__name">MART</span><span class="logo__sub">GLOBAL</span></span>
+      </a>
+      <nav class="primary-nav" aria-label="Primary">
+        <ul>
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About Us</a></li>
+          <li class="nav-item">
+            <button class="nav-link" type="button" aria-expanded="false" aria-controls="mega-corporate" data-mega-trigger><span>Corporate<span class="nav-long"> Solutions</span></span><svg class="icon chev" aria-hidden="true" focusable="false"><use href="#i-chev"></use></svg></button>
+            <div class="mega" id="mega-corporate" data-mega>
+            <div class="mega__main">
+              <div class="mega__head"><span class="mega__title">Corporate Solutions</span><p class="mega__intro">Market intelligence and strategy for businesses growing in rural and emerging markets.</p></div>
+              <ul class="mega__list">
+                <li><a class="mega-link is-featured" href="research-strategy.html"><span class="mega-link__title">Research &amp; Strategy</span><span class="mega-link__desc">Understand markets, customers and opportunities through evidence-led research and strategic insight.</span><span class="mega-link__arrow"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></span></a></li><li><a class="mega-link" href="index.html#capabilities"><span class="mega-link__title">Business Model Innovation</span><span class="mega-link__desc">Design and test business models built for the realities of rural and emerging markets.</span><span class="mega-link__arrow"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></span></a></li><li><a class="mega-link" href="index.html#capabilities"><span class="mega-link__title">Strategic Activation</span><span class="mega-link__desc">Turn strategy into on-ground presence through activation, distribution and engagement.</span><span class="mega-link__arrow"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></span></a></li><li><a class="mega-link" href="index.html#capabilities"><span class="mega-link__title">Rural Immersion Program</span><span class="mega-link__desc">Bring leadership teams face to face with rural consumers, markets and communities.</span><span class="mega-link__arrow"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></span></a></li>
+              </ul>
+            </div>
+            <aside class="mega__aside" aria-label="Explore MART Global">
+              <span class="mega__aside-title">Explore MART</span>
+              <ul><li><a href="index.html#focus-areas">Focus Areas <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></a></li><li><a href="index.html#about">Landmark Projects <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></a></li><li><a href="large-scale-program-implementation.html">Social Solutions <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></a></li></ul>
+              <a class="mega__feature" href="research-strategy.html#approach"><span class="media"><img src="assets/images/market-sm.webp" alt="" width="480" height="320" decoding="async" loading="lazy"></span><span><span>Featured approach</span><strong>From questions to strategic direction, in five stages</strong></span></a>
+            </aside>
+          </div>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link is-current" type="button" aria-expanded="false" aria-controls="mega-social" data-mega-trigger><span>Social<span class="nav-long"> Solutions</span></span><svg class="icon chev" aria-hidden="true" focusable="false"><use href="#i-chev"></use></svg></button>
+            <div class="mega" id="mega-social" data-mega>
+            <div class="mega__main">
+              <div class="mega__head"><span class="mega__title">Social Solutions</span><p class="mega__intro">Program design and implementation that turns strategy into sustainable impact.</p></div>
+              <ul class="mega__list">
+                <li><a class="mega-link is-featured" href="large-scale-program-implementation.html"><span class="mega-link__title">Large-Scale Program Implementation</span><span class="mega-link__desc">Design and deliver programs that reach communities at scale, from pilot to statewide rollout.</span><span class="mega-link__arrow"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></span></a></li><li><a class="mega-link" href="index.html#capabilities"><span class="mega-link__title">Project Management &amp; Advisory</span><span class="mega-link__desc">Structure, monitor and steer complex programs with many stakeholders.</span><span class="mega-link__arrow"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></span></a></li><li><a class="mega-link" href="index.html#capabilities"><span class="mega-link__title">CSR Solutions</span><span class="mega-link__desc">Shape CSR strategies and projects that create measurable, lasting community value.</span><span class="mega-link__arrow"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></span></a></li><li><a class="mega-link" href="index.html#capabilities"><span class="mega-link__title">Market Linkages</span><span class="mega-link__desc">Connect producers, artisans and enterprises with sustainable markets and buyers.</span><span class="mega-link__arrow"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></span></a></li>
+              </ul>
+            </div>
+            <aside class="mega__aside" aria-label="Explore MART Global">
+              <span class="mega__aside-title">Explore MART</span>
+              <ul><li><a href="index.html#focus-areas">Focus Areas <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></a></li><li><a href="index.html#about">Landmark Projects <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></a></li><li><a href="research-strategy.html">Corporate Solutions <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></a></li></ul>
+              <a class="mega__feature" href="large-scale-program-implementation.html#principles"><span class="media"><img src="assets/images/community-sm.webp" alt="" width="480" height="320" decoding="async" loading="lazy"></span><span><span>Our philosophy</span><strong>Six principles behind programs that work on the ground</strong></span></a>
+            </aside>
+          </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="index.html#focus-areas">Focus Areas</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#approach">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="research-strategy.html#impact-areas">Knowledge Center</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn--primary header-cta" href="#contact">Let&rsquo;s Talk <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" data-menu-toggle>
+        <span class="sr-only" data-menu-label>Open menu</span>
+        <span class="menu-toggle__bars" aria-hidden="true"><span></span><span></span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobile-nav" data-mobile-nav role="dialog" aria-modal="true" aria-label="Site menu">
+    <div class="mobile-nav__scroll">
+      <nav aria-label="Mobile">
+        <ul class="mobile-nav__list">
+          <li class="mobile-nav__item" style="--i:0"><a class="mobile-nav__link" href="index.html">Home <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></a></li>
+          <li class="mobile-nav__item" style="--i:1"><a class="mobile-nav__link" href="index.html#about">About Us <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></a></li>
+          <li class="mobile-nav__item" style="--i:2">
+            <button class="mobile-nav__link" type="button" aria-expanded="false" aria-controls="m-corporate" data-mobile-acc>Corporate Solutions <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-plus"></use></svg></button>
+            <div class="mobile-acc" id="m-corporate"><ul><li><a href="research-strategy.html"><span class="n">01</span>Research &amp; Strategy<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></a></li><li><a href="index.html#capabilities"><span class="n">02</span>Business Model Innovation<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></a></li><li><a href="index.html#capabilities"><span class="n">03</span>Strategic Activation<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></a></li><li><a href="index.html#capabilities"><span class="n">04</span>Rural Immersion Program<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></a></li></ul></div>
+          </li>
+          <li class="mobile-nav__item" style="--i:3">
+            <button class="mobile-nav__link" type="button" aria-expanded="false" aria-controls="m-social" data-mobile-acc>Social Solutions <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-plus"></use></svg></button>
+            <div class="mobile-acc" id="m-social"><ul><li><a href="large-scale-program-implementation.html"><span class="n">01</span>Large-Scale Program Implementation<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></a></li><li><a href="index.html#capabilities"><span class="n">02</span>Project Management &amp; Advisory<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></a></li><li><a href="index.html#capabilities"><span class="n">03</span>CSR Solutions<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></a></li><li><a href="index.html#capabilities"><span class="n">04</span>Market Linkages<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></a></li></ul></div>
+          </li>
+          <li class="mobile-nav__item" style="--i:4"><a class="mobile-nav__link" href="index.html#focus-areas">Focus Areas <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></a></li>
+          <li class="mobile-nav__item" style="--i:5"><a class="mobile-nav__link" href="index.html#approach">Projects <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></a></li>
+          <li class="mobile-nav__item" style="--i:6"><a class="mobile-nav__link" href="research-strategy.html#impact-areas">Knowledge Center <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></a></li>
+          <li class="mobile-nav__item" style="--i:7"><a class="mobile-nav__link" href="#contact">Contact <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></a></li>
+        </ul>
+      </nav>
+      <div class="mobile-nav__foot">
+        <a class="btn btn--yellow" href="#contact">Let&rsquo;s Talk <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></a>
+        <div class="mobile-nav__contact"><a href="mailto:info@martglobal.net">info@martglobal.net</a><span>New Delhi NCR, India</span></div>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="doc-hero" aria-labelledby="page-title">
+      <div class="doc-hero__media">
+        <img src="assets/images/program-landscape.webp" srcset="assets/images/program-landscape-sm.webp 960w, assets/images/program-landscape.webp 2400w" sizes="100vw" alt="Aerial view at dawn over paddy fields and a village stretching to the horizon" width="2400" height="1500" decoding="async" fetchpriority="high">
+      </div>
+      <div class="container on-dark">
+        <div class="doc-hero__content">
+          <div>
+            <nav class="breadcrumb intro" aria-label="Breadcrumb">
+              <ol>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#capabilities">Social Solutions</a></li>
+                <li><span aria-current="page">Large-Scale Program Implementation</span></li>
+              </ol>
+            </nav>
+            <p class="eyebrow intro" style="--d:80ms">Social Solutions</p>
+            <h1 class="doc-hero__title intro" id="page-title" style="--d:160ms">Large-Scale<br>Program Implementation</h1>
+            <p class="doc-hero__headline intro" style="--d:250ms">From Strategy to <span>Impact at Scale.</span></p>
+          </div>
+          <div class="doc-hero__aside intro" style="--d:360ms">
+            <p>MART Global designs and delivers development programs that work with communities, institutions and markets. They are built to perform on the ground and to grow beyond the pilot.</p>
+            <div class="btn-row">
+              <a class="btn btn--yellow" href="#contact">Discuss Your Program <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></a>
+              <a class="btn btn--ghost-light" href="#principles">Explore Our Approach</a>
+            </div>
+          </div>
+        </div>
+        <ul class="doc-metrics intro intro--fade" style="--d:520ms">
+          <li class="doc-metric"><span class="doc-metric__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-users"></use></svg></span>COMMUNITY<br>PARTICIPATION</li>
+          <li class="doc-metric"><span class="doc-metric__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-institution"></use></svg></span>MULTI-STAKEHOLDER<br>IMPLEMENTATION</li>
+          <li class="doc-metric"><span class="doc-metric__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-scale"></use></svg></span>SCALABLE<br>PROGRAM DESIGN</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ OVERVIEW ============ -->
+    <section class="section" aria-labelledby="ov-title">
+      <div class="container">
+        <div class="overview">
+          <div class="overview__media reveal-left">
+            <figure class="media media--hover"><img src="assets/images/paddy-water.webp" srcset="assets/images/paddy-water-sm.webp 480w, assets/images/paddy-water.webp 2000w" sizes="(max-width: 900px) 100vw, 48vw" alt="Aerial view of flooded paddy fields divided by earthen bunds" width="2000" height="1400" decoding="async" loading="lazy"></figure>
+            <figure class="media media--inset"><img src="assets/images/village.webp" srcset="assets/images/village-sm.webp 480w, assets/images/village.webp 2000w" sizes="240px" alt="Aerial view of village rooftops among trees" width="2000" height="1400" decoding="async" loading="lazy"></figure>
+          </div>
+          <div class="overview__body">
+            <p class="eyebrow reveal">Service Overview</p>
+            <h2 class="h2 reveal" id="ov-title" style="--delay:80ms">Building Programs<br>That Work on the Ground.</h2>
+            <p class="lead reveal" style="--delay:160ms">Large-scale programs succeed or fail in the details of delivery: how communities are engaged, how institutions are strengthened and how markets respond.</p>
+            <p class="reveal" style="--delay:220ms">We bring together field teams, technical specialists and program managers to design, roll out and manage programs in agriculture, livelihoods, enterprise development and market access. We work alongside governments, foundations, multilateral agencies and CSR partners.</p>
+            <ul class="overview__list reveal" style="--delay:280ms">
+              <li><span>SCOPE</span>Program design and rollout</li>
+              <li><span>PARTNERS</span>Government, CSR and multilaterals</li>
+              <li><span>FOCUS</span>Livelihoods, agriculture and enterprise</li>
+              <li><span>APPROACH</span>Participatory and evidence-led</li>
+            </ul>
+          </div>
+        </div>
+
+        <figure class="statement" data-observe>
+          <svg class="statement__mark" viewBox="0 0 48 40" aria-hidden="true"><path d="M20 4C9.5 6.2 3 13.6 3 24v12h15V21h-7c.6-5.2 4-8.6 9.6-9.9zM45 4c-10.5 2.2-17 9.6-17 20v12h15V21h-7c.6-5.2 4-8.6 9.6-9.9z"/></svg>
+          <blockquote class="statement__text" style="margin:0">Implementation is not the final step. <span class="soft">It is where strategy is</span> <span class="mark">tested.</span></blockquote>
+          <figcaption class="statement__cite">The MART Global implementation philosophy</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ SIX PRINCIPLES ============ -->
+    <section class="section principles on-dark" id="principles" aria-labelledby="pr-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow reveal">Our Philosophy</p>
+            <h2 class="h2 reveal" id="pr-title" style="--delay:80ms">Six Principles.<br>One Implementation Philosophy.</h2>
+          </div>
+          <p class="lead reveal" style="--delay:160ms">Every program we deliver is shaped by six principles, refined over three decades of fieldwork with communities across India.</p>
+        </div>
+
+        <div class="principles-layout" data-principles>
+          <div class="pgrid">
+            <div class="pgrid__lines" aria-hidden="true"><i class="h h1"></i><i class="h h2"></i><i class="h h3"></i><i class="h h4"></i><i class="v v1"></i><i class="v v2"></i><i class="v v3"></i></div>
+            <article class="principle reveal is-active" tabindex="0" data-principle="0" style="--delay:0ms" aria-labelledby="pr-0">
+              <div class="principle__tex" aria-hidden="true"><img src="assets/images/village-sm.webp" alt="" width="480" height="320" decoding="async" loading="lazy"></div>
+              <div class="principle__top"><span class="principle__n num">01</span><span class="principle__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-home"></use></svg></span></div>
+              <h3 class="principle__title" id="pr-0">Focus on the Poorest of the Poor</h3>
+              <p class="principle__text">Programs designed first for the households most often left out.</p>
+              <p class="principle__more">We prioritise the most vulnerable households in targeting, design and delivery, so benefits reach those who need them most and not only those easiest to reach.</p>
+              <span class="principle__arrow" aria-hidden="true"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></span>
+            </article><article class="principle reveal" tabindex="0" data-principle="1" style="--delay:70ms" aria-labelledby="pr-1">
+              <div class="principle__tex" aria-hidden="true"><img src="assets/images/community-sm.webp" alt="" width="480" height="320" decoding="async" loading="lazy"></div>
+              <div class="principle__top"><span class="principle__n num">02</span><span class="principle__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-users"></use></svg></span></div>
+              <h3 class="principle__title" id="pr-1">Participatory Approach</h3>
+              <p class="principle__text">Communities shape the program rather than simply receive it.</p>
+              <p class="principle__more">Through participatory appraisal, community meetings and local institutions, people help define problems, plan solutions and monitor progress.</p>
+              <span class="principle__arrow" aria-hidden="true"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></span>
+            </article><article class="principle reveal" tabindex="0" data-principle="2" style="--delay:140ms" aria-labelledby="pr-2">
+              <div class="principle__tex" aria-hidden="true"><img src="assets/images/terraces-sm.webp" alt="" width="480" height="320" decoding="async" loading="lazy"></div>
+              <div class="principle__top"><span class="principle__n num">03</span><span class="principle__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-leaf"></use></svg></span></div>
+              <h3 class="principle__title" id="pr-2">Eco-Development Approach</h3>
+              <p class="principle__text">Livelihood gains that protect the natural resource base.</p>
+              <p class="principle__more">Soil, water and biodiversity are built into program design, so economic progress does not come at the cost of the environment communities depend on.</p>
+              <span class="principle__arrow" aria-hidden="true"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></span>
+            </article><article class="principle reveal" tabindex="0" data-principle="3" style="--delay:210ms" aria-labelledby="pr-3">
+              <div class="principle__tex" aria-hidden="true"><img src="assets/images/orchard-sm.webp" alt="" width="480" height="320" decoding="async" loading="lazy"></div>
+              <div class="principle__top"><span class="principle__n num">04</span><span class="principle__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-partners"></use></svg></span></div>
+              <h3 class="principle__title" id="pr-3">Equal Partnership</h3>
+              <p class="principle__text">Communities, government and partners as genuine co-owners.</p>
+              <p class="principle__more">Roles, responsibilities and decisions are shared openly between communities, institutions, government and funders. That builds ownership that outlasts the program.</p>
+              <span class="principle__arrow" aria-hidden="true"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></span>
+            </article><article class="principle reveal" tabindex="0" data-principle="4" style="--delay:280ms" aria-labelledby="pr-4">
+              <div class="principle__tex" aria-hidden="true"><img src="assets/images/hero-farmland-sm.webp" alt="" width="960" height="600" decoding="async" loading="lazy"></div>
+              <div class="principle__top"><span class="principle__n num">05</span><span class="principle__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-trend"></use></svg></span></div>
+              <h3 class="principle__title" id="pr-4">Quantum Jumps, Not Incremental Changes</h3>
+              <p class="principle__text">Designing for step-changes in income and opportunity.</p>
+              <p class="principle__more">We look for interventions such as new markets, technologies and enterprise models that can transform livelihoods rather than improve them at the margins.</p>
+              <span class="principle__arrow" aria-hidden="true"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></span>
+            </article><article class="principle reveal" tabindex="0" data-principle="5" style="--delay:350ms" aria-labelledby="pr-5">
+              <div class="principle__tex" aria-hidden="true"><img src="assets/images/fields-mustard-sm.webp" alt="" width="480" height="320" decoding="async" loading="lazy"></div>
+              <div class="principle__top"><span class="principle__n num">06</span><span class="principle__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-device"></use></svg></span></div>
+              <h3 class="principle__title" id="pr-5">Technology-Driven Approach</h3>
+              <p class="principle__text">Digital tools for targeting, delivery, tracking and transparency.</p>
+              <p class="principle__more">Mobile data collection, GIS mapping, digital MIS and traceability systems bring speed, accountability and real-time insight to programs at scale.</p>
+              <span class="principle__arrow" aria-hidden="true"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></span>
+            </article>
+          </div>
+          <p class="pgrid-hint" aria-hidden="true">Swipe to explore all six <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></p>
+          <div class="pvisual reveal-right" aria-live="polite">
+            <div class="pvisual__img is-current" data-pvisual-img="0"><img src="assets/images/village.webp" srcset="assets/images/village-sm.webp 480w, assets/images/village.webp 2000w" sizes="40vw" alt="" width="2000" height="1400" decoding="async" loading="lazy"></div><div class="pvisual__img" data-pvisual-img="1"><img src="assets/images/community.webp" srcset="assets/images/community-sm.webp 480w, assets/images/community.webp 2000w" sizes="40vw" alt="" width="2000" height="1400" decoding="async" loading="lazy"></div><div class="pvisual__img" data-pvisual-img="2"><img src="assets/images/terraces.webp" srcset="assets/images/terraces-sm.webp 480w, assets/images/terraces.webp 2000w" sizes="40vw" alt="" width="2000" height="1400" decoding="async" loading="lazy"></div><div class="pvisual__img" data-pvisual-img="3"><img src="assets/images/orchard.webp" srcset="assets/images/orchard-sm.webp 480w, assets/images/orchard.webp 2000w" sizes="40vw" alt="" width="2000" height="1400" decoding="async" loading="lazy"></div><div class="pvisual__img" data-pvisual-img="4"><img src="assets/images/hero-farmland.webp" srcset="assets/images/hero-farmland-sm.webp 960w, assets/images/hero-farmland.webp 2400w" sizes="40vw" alt="" width="2400" height="1500" decoding="async" loading="lazy"></div><div class="pvisual__img" data-pvisual-img="5"><img src="assets/images/fields-mustard.webp" srcset="assets/images/fields-mustard-sm.webp 480w, assets/images/fields-mustard.webp 2000w" sizes="40vw" alt="" width="2000" height="1400" decoding="async" loading="lazy"><svg viewBox="0 0 400 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                  <g fill="none" stroke="#FFE21C" stroke-width="1.2" opacity=".9">
+                    <path d="M70 140 L170 200 L260 150 L330 250 L220 320 L120 280 Z" stroke-dasharray="3 5"/>
+                    <path d="M170 200 L220 320"/>
+                  </g>
+                  <g fill="#032746" stroke="#FFE21C" stroke-width="2">
+                    <circle cx="70" cy="140" r="5"/><circle cx="170" cy="200" r="7"/><circle cx="260" cy="150" r="5"/><circle cx="330" cy="250" r="5"/><circle cx="220" cy="320" r="7"/><circle cx="120" cy="280" r="5"/>
+                  </g>
+                  <circle cx="170" cy="200" r="26" fill="none" stroke="#fff" stroke-opacity=".55"/>
+                  <g font-family="Inter, sans-serif" font-size="9" font-weight="600" letter-spacing="1.2" fill="#fff">
+                    <rect x="184" y="166" width="104" height="22" rx="11" fill="#032746" fill-opacity=".85"/>
+                    <text x="196" y="180">GPS &middot; PLOT 1182</text>
+                  </g>
+                </svg></div>
+            <div class="pvisual__dots" aria-hidden="true"><span class="is-current"></span><span></span><span></span><span></span><span></span><span></span></div>
+            <div class="pvisual__copy">
+              <span class="pvisual__n" data-pv-n>PRINCIPLE 01</span>
+              <h3 class="pvisual__title" data-pv-title>Focus on the Poorest of the Poor</h3>
+              <p class="pvisual__text" data-pv-text>We prioritise the most vulnerable households in targeting, design and delivery, so benefits reach those who need them most and not only those easiest to reach.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ IMPLEMENTATION MODEL ============ -->
+    <section class="section section--soft" id="model" aria-labelledby="model-title">
+      <div class="container model" data-model>
+        <div class="model__intro">
+          <p class="eyebrow reveal">Implementation Model</p>
+          <h2 class="h2 reveal" id="model-title" style="--delay:80ms">From Community Insight to Scalable Outcomes.</h2>
+          <p class="lead reveal" style="--delay:160ms">A six-stage model that moves programs from understanding to scale, with communities involved at every step.</p>
+          <div class="model__progress" aria-hidden="true">
+            <span class="model__count num" data-model-count>01</span>
+            <span class="model__count-meta"><strong data-model-name>Understand</strong>of 06 stages</span>
+          </div>
+          <div class="model__bar" aria-hidden="true"><span data-model-bar></span></div>
+        </div>
+        <div class="msteps">
+            <article class="mstep is-active" data-mstep="0" data-title="Understand">
+              <span class="mstep__n num">01</span>
+              <div>
+                <h3 class="mstep__title">Understand</h3>
+                <p class="mstep__text">An immersive assessment of communities, livelihoods, institutions and markets before anything is designed.</p>
+                <div class="mstep__tags"><span>Baseline studies</span><span>Needs assessment</span><span>Stakeholder mapping</span></div>
+              </div>
+            </article><article class="mstep" data-mstep="1" data-title="Co-Design">
+              <span class="mstep__n num">02</span>
+              <div>
+                <h3 class="mstep__title">Co-Design</h3>
+                <p class="mstep__text">Program design developed with communities and partners, grounded in local priorities and realities.</p>
+                <div class="mstep__tags"><span>Participatory planning</span><span>Theory of change</span><span>Pilot design</span></div>
+              </div>
+            </article><article class="mstep" data-mstep="2" data-title="Build Capacity">
+              <span class="mstep__n num">03</span>
+              <div>
+                <h3 class="mstep__title">Build Capacity</h3>
+                <p class="mstep__text">Strengthening community institutions, producer groups and local teams so they can own and sustain the work.</p>
+                <div class="mstep__tags"><span>Training</span><span>Institution building</span><span>Local leadership</span></div>
+              </div>
+            </article><article class="mstep" data-mstep="3" data-title="Implement">
+              <span class="mstep__n num">04</span>
+              <div>
+                <h3 class="mstep__title">Implement</h3>
+                <p class="mstep__text">Disciplined delivery across many locations, with clear governance, field supervision and partner coordination.</p>
+                <div class="mstep__tags"><span>Field teams</span><span>Program management</span><span>Digital MIS</span></div>
+              </div>
+            </article><article class="mstep" data-mstep="4" data-title="Connect Markets">
+              <span class="mstep__n num">05</span>
+              <div>
+                <h3 class="mstep__title">Connect Markets</h3>
+                <p class="mstep__text">Linking producers and enterprises with buyers, finance and services so that gains last.</p>
+                <div class="mstep__tags"><span>Buyer linkages</span><span>FPO support</span><span>Value chains</span></div>
+              </div>
+            </article><article class="mstep" data-mstep="5" data-title="Measure &amp; Scale">
+              <span class="mstep__n num">06</span>
+              <div>
+                <h3 class="mstep__title">Measure &amp; Scale</h3>
+                <p class="mstep__text">Tracking outcomes, learning quickly and scaling what works across districts and states.</p>
+                <div class="mstep__tags"><span>M&amp;E systems</span><span>Impact assessment</span><span>Scale-up strategy</span></div>
+              </div>
+            </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ECOSYSTEM ============ -->
+    <section class="section" aria-labelledby="eco-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow reveal">Impact Ecosystem</p>
+            <h2 class="h2 reveal" id="eco-title" style="--delay:80ms">How Impact Travels<br>From Village to Market.</h2>
+          </div>
+          <p class="lead reveal" style="--delay:160ms">Programs scale when every layer of the system is engaged, from households and local institutions to government, partners and markets.</p>
+        </div>
+        <div class="eco">
+          <div class="eco__head" aria-hidden="true"><span>Scale of engagement</span><span></span><span>Depth of change</span></div>
+          <span class="eco__axis eco__axis--l" aria-hidden="true"></span>
+          <span class="eco__axis eco__axis--r" aria-hidden="true"></span>
+          <ol class="eco__rows">
+            <li class="eco-row reveal" style="--delay:0ms">
+                <span class="eco-row__label eco-row__label--l" aria-hidden="true">Household</span>
+                <div class="eco-tier" style="--w:66%">
+                  <span class="eco-tier__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-users"></use></svg></span>
+                  <span class="eco-tier__title">COMMUNITIES<span class="eco-tier__sub">Households, farmers, artisans and women&rsquo;s collectives</span></span>
+                </div>
+                <span class="eco-row__label eco-row__label--r" aria-hidden="true">Voice</span>
+              </li><li class="eco-row eco-row--link" aria-hidden="true"><span></span><span class="eco-link" style="--ad:0.00s"></span><span></span></li><li class="eco-row reveal" style="--delay:110ms">
+                <span class="eco-row__label eco-row__label--l" aria-hidden="true">Village</span>
+                <div class="eco-tier" style="--w:74%">
+                  <span class="eco-tier__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-home"></use></svg></span>
+                  <span class="eco-tier__title">LOCAL INSTITUTIONS<span class="eco-tier__sub">SHGs, FPOs, panchayats and cooperatives</span></span>
+                </div>
+                <span class="eco-row__label eco-row__label--r" aria-hidden="true">Ownership</span>
+              </li><li class="eco-row eco-row--link" aria-hidden="true"><span></span><span class="eco-link" style="--ad:0.45s"></span><span></span></li><li class="eco-row reveal" style="--delay:220ms">
+                <span class="eco-row__label eco-row__label--l" aria-hidden="true">District &middot; State</span>
+                <div class="eco-tier" style="--w:83%">
+                  <span class="eco-tier__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-institution"></use></svg></span>
+                  <span class="eco-tier__title">GOVERNMENT + PARTNERS<span class="eco-tier__sub">Departments, missions, CSR, foundations and multilaterals</span></span>
+                </div>
+                <span class="eco-row__label eco-row__label--r" aria-hidden="true">Enablement</span>
+              </li><li class="eco-row eco-row--link" aria-hidden="true"><span></span><span class="eco-link" style="--ad:0.90s"></span><span></span></li><li class="eco-row reveal" style="--delay:330ms">
+                <span class="eco-row__label eco-row__label--l" aria-hidden="true">Market</span>
+                <div class="eco-tier" style="--w:92%">
+                  <span class="eco-tier__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-store"></use></svg></span>
+                  <span class="eco-tier__title">MARKETS<span class="eco-tier__sub">Buyers, aggregators, retailers, finance and services</span></span>
+                </div>
+                <span class="eco-row__label eco-row__label--r" aria-hidden="true">Demand</span>
+              </li><li class="eco-row eco-row--link" aria-hidden="true"><span></span><span class="eco-link" style="--ad:1.35s"></span><span></span></li><li class="eco-row reveal" style="--delay:440ms">
+                <span class="eco-row__label eco-row__label--l" aria-hidden="true">System</span>
+                <div class="eco-tier eco-tier--impact" style="--w:100%">
+                  <span class="eco-tier__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-sprout"></use></svg></span>
+                  <span class="eco-tier__title">SUSTAINABLE IMPACT<span class="eco-tier__sub">Higher incomes, resilient livelihoods and lasting institutions</span></span>
+                </div>
+                <span class="eco-row__label eco-row__label--r" aria-hidden="true">Outcomes</span>
+              </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SOCIAL → CORPORATE ============ -->
+    <section class="section section--light" aria-labelledby="xc-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow reveal">Connected Capabilities</p>
+            <h2 class="h2 reveal" id="xc-title" style="--delay:80ms">Implementation Works Better With Strong Strategy Behind It.</h2>
+          </div>
+          <p class="lead reveal" style="--delay:160ms">Our corporate practice gives programs the market insight, business models and activation they need to last beyond their funding cycle.</p>
+        </div>
+        <ul class="xrows reveal">
+            <li><a class="xrow" href="research-strategy.html">
+              <span class="xrow__n num">01</span>
+              <span class="xrow__title">Research &amp; Strategy<span class="xrow__flag">Featured</span></span>
+              <span class="xrow__desc">Ground program design in rigorous evidence about communities, markets and behaviour.</span>
+              <span class="xrow__cat">Corporate Solutions</span>
+              <span class="xrow__arrow"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></span>
+            </a></li>
+            <li><a class="xrow" href="index.html#capabilities">
+              <span class="xrow__n num">02</span>
+              <span class="xrow__title">Business Model Innovation</span>
+              <span class="xrow__desc">Build enterprise and market models that make community programs commercially sustainable.</span>
+              <span class="xrow__cat">Corporate Solutions</span>
+              <span class="xrow__arrow"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></span>
+            </a></li>
+            <li><a class="xrow" href="index.html#capabilities">
+              <span class="xrow__n num">03</span>
+              <span class="xrow__title">Strategic Activation</span>
+              <span class="xrow__desc">Drive awareness and adoption on the ground through structured activation.</span>
+              <span class="xrow__cat">Corporate Solutions</span>
+              <span class="xrow__arrow"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></span>
+            </a></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="site-footer__texture" aria-hidden="true"></div>
+    <div class="site-footer__grid-tex" aria-hidden="true"></div>
+    <div class="container">
+      <div class="footer-cta">
+        <h2 class="footer-cta__title reveal">Have a challenge<br>you&rsquo;re trying to solve? <span>Let&rsquo;s find the right capability.</span></h2>
+        <div class="footer-cta__side reveal" style="--delay:120ms">
+          <p>Tell us your objective. We&rsquo;ll bring together the right research, strategy and implementation expertise.</p>
+          <a class="btn btn--yellow" href="mailto:info@martglobal.net?subject=Let%E2%80%99s%20talk">Let&rsquo;s Talk <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></a>
+        </div>
+      </div>
+
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a class="logo" href="index.html" aria-label="MART Global home">
+            <svg class="logo__mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><use href="#logo-mark"></use></svg>
+            <span class="logo__type"><span class="logo__name">MART</span><span class="logo__sub">GLOBAL</span></span>
+          </a>
+          <p>A rural markets and development consulting organisation. Since 1993, MART Global has helped businesses, governments and development partners understand markets, design solutions and deliver measurable impact across India and beyond.</p>
+        </div>
+        <div class="footer-col footer-col--nav">
+          <h3>Navigation</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#focus-areas">Focus Areas</a></li>
+            <li><a href="index.html#approach">Projects</a></li>
+            <li><a href="research-strategy.html#impact-areas">Knowledge Center</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-col--corp">
+          <h3>Corporate Solutions</h3>
+          <ul><li><a href="research-strategy.html">Research &amp; Strategy</a></li><li><a href="index.html#capabilities">Business Model Innovation</a></li><li><a href="index.html#capabilities">Strategic Activation</a></li><li><a href="index.html#capabilities">Rural Immersion Program</a></li></ul>
+        </div>
+        <div class="footer-col footer-col--soc">
+          <h3>Social Solutions</h3>
+          <ul><li><a href="large-scale-program-implementation.html">Large-Scale Program Implementation</a></li><li><a href="index.html#capabilities">Project Management &amp; Advisory</a></li><li><a href="index.html#capabilities">CSR Solutions</a></li><li><a href="index.html#capabilities">Market Linkages</a></li></ul>
+        </div>
+        <div class="footer-col footer-col--contact">
+          <h3>Contact</h3>
+          <div class="footer-contact">
+            <address>New Delhi NCR, India</address>
+            <a href="mailto:info@martglobal.net">info@martglobal.net</a>
+          </div>
+          <h3 style="margin-top:36px">Social Media</h3>
+          <div class="socials">
+            <a href="#" aria-label="MART Global on LinkedIn"><svg aria-hidden="true"><use href="#s-linkedin"></use></svg></a>
+            <a href="#" aria-label="MART Global on X"><svg aria-hidden="true"><use href="#s-x"></use></svg></a>
+            <a href="#" aria-label="MART Global on YouTube"><svg aria-hidden="true"><use href="#s-youtube"></use></svg></a>
+            <a href="#" aria-label="MART Global on Facebook"><svg aria-hidden="true"><use href="#s-facebook"></use></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; <span data-year>2026</span> MART Global. All rights reserved.</span>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#top">Back to top &uarr;</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-wordmark" aria-hidden="true">MART GLOBAL</div>
+  </footer>
+</body>
+</html>
